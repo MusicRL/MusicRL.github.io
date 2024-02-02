@@ -97,11 +97,11 @@
   <body>
     <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-dark rounded">
       <div class="text-center title">
-        <h1>Title</h1>
+        <h1>MusicRL: Aligning Music Generation to Human Preferences</h1>
         <br>
       </div>
       <p>
-        Abstract
+        We propose MusicRL, a music generation system finetuned from human feedback. Appreciation of text-to-music models is particularly subjective since the concept of musicality as well as the specific intention behind a caption are user-dependent (e.g. a caption such as “upbeat work-out music” can map to a retro guitar solo or atechnopop beat). Not only this makes supervised training of such models challenging, but it also calls for integrating continuous human feedback in their post-deployment finetuning. MusicRL is a pretrained autoregressive MusicLM <a href="https://arxiv.org/pdf/2301.11325.pdf">(Agostinelli et al., 2023)</a> model of discrete audio tokens finetuned with reinforcement learning to maximize sequence-level rewards. We first design reward functions related specifically to text-adherence and audio quality with the help from selected raters, and use those to finetune MusicLM. We then deploy the pretrained model to users and collect a substantial dataset comprising 300,000 pairwise preferences. Using Reinforcement Learning from Human Feedback (RLHF), we train MusicRL-U, the first text-to-music model that incorporates human feedback at scale. Human evaluations show that both MusicRL-R and MusicRL-U are preferred to the baseline. Ultimately, MusicRL-RU combines the two approaches and results in the best model according to human raters. Ablation studies shed light on the musical attributes influencing human preferences, indicating that text adherence and quality only account for a part of it. This underscores the prevalence of subjectivity in musical appreciation and calls for further involvement of human listeners in the finetuning of music generation models.
       <br>
       </p>
       <br>
@@ -114,7 +114,7 @@
     </div>
 
     <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-dark rounded">
-      <h3>Comparison</h3>
+      <h3>Comparing Base and RL-Finetuned Models. Examples randomly sampled from human evaluations.</h3>
       <div class="container pt-1">
         <div class="table-responsive pt-1">
           <table
@@ -124,10 +124,10 @@
             <thead>
               <tr>
                 <th>Caption</th>
-                <th style="text-align: center">A</th>
-                <th style="text-align: center">B</th>
-                <th style="text-align: center">C</th>
-                <th style="text-align: center">D</th>
+                <th style="text-align: center">MusicLM</th>
+                <th style="text-align: center">MusicRL-R</th>
+                <th style="text-align: center">MusicRL-U</th>
+                <th style="text-align: center">MusicRL-RU</th>
               </tr>
             </thead>
             <tbody></tbody>
